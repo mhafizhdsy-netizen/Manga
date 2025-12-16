@@ -361,9 +361,9 @@ const getManhuaManhwa = async (req, res, type) => {
   let pagenumber = req.params.pagenumber;
   let path =
     pagenumber === "1"
-      ? `/manga/?tipe=${type}`
-      : `/manga/page/${pagenumber}/manga/?tipe=${type}`;
-  const url = baseApi + path;
+      ? `/pustaka/?tipe=${type}`
+      : `/manga/page/${pagenumber}/pustaka/?tipe=${type}`;
+  const url = baseUrl + path;
   try {
     console.log(url);
     const response = await AxiosService(url);
