@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const cheerio = require("cheerio");
 const {baseUrl, baseApi} = require("../constants/urls");
-const replaceMangaPage = "https://komiku.org/daftar-komik/";
+const replaceMangaPage = "https://komiku.org/manga/";
 const AxiosService = require("../helpers/axiosService");
 
 // manga popular ----Ignore this for now --------
@@ -361,7 +361,9 @@ const getManhuaManhwa = async (req, res, type) => {
   let pagenumber = req.params.pagenumber;
   let path =
     pagenumber === "1"
-      ? `/daftar-komik/?tipe=${type}`;
+      ? `/manga/?tipe=${type}`
+          : `/manga/page/${pagenumber}/manga/?tipe=${type}`;
+  const url = baseApi + path;
   const url = baseUrl + path;
   try {
     console.log(url);
