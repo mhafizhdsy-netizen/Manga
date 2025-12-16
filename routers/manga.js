@@ -376,8 +376,8 @@ const getManhuaManhwa = async (req, res, type) => {
       title = $(el).find(".kan > a").find("h3").text().trim();
       endpoint = $(el).find("a").attr("href").replace(replaceMangaPage, "");
       type = $(el).find(".bgei > a").find(".tpe1_inf > b").text().trim();
-      updated_on = $(el).find(".kan > span").text().split("|")[1].trim();
-      thumb = $(el).find(".bgei > a").find("img").attr("src");
+      updated_on = $(el).find(".kan > span.judul2").text().split("|")[1].trim();
+      thumb = $(el).find(".img.sd > a").find("img").attr("src");
       chapter = $(el)
         .find("div.kan > div:nth-child(5) > a > span:nth-child(2)")
         .text();
