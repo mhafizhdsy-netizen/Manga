@@ -361,9 +361,8 @@ const getManhuaManhwa = async (req, res, type) => {
   let pagenumber = req.params.pagenumber;
   let path =
     pagenumber === "1"
-      ? `/daftar-komik/?tipe=${type}&genre=&genre2=&status=`
-      : `/manga/page/${pagenumber}/daftar-komik/?tipe=${type}`;
-  const url = baseApi + path;
+      ? `/daftar-komik/?tipe=${type}`;
+  const url = baseUrl + path;
   try {
     console.log(url);
     const response = await AxiosService(url);
