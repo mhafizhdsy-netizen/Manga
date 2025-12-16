@@ -1,85 +1,121 @@
-# Manga API
-Restful API Manga bahasa Indonesia built with ❤️ and node.js
+## Samehadaku restAPI
 
-# Usage
+This rest api is unofficial. So I am not responsible if there is incomplete/broken data.
+
+**All data taken from**: [Samehadaku](https://194.163.183.129)
+<br>
+**Hi! Check out the frontend I've made**: [Yamiweb](https://yamiweb.herokuapp.com/)
+
+
+### TODO
+
+- [x] Home (Anime This Season)
+- [x] Ongoing
+  - [x] Pagination
+- [x] Schedule
+- [x] Genre
+  - [x] Anime By Genre With Pagination
+- [x] Anime
+  - [x] Pagination
+  - [x] Detail
+  - [x] Batch
+  - [x] Episode List
+- [x] Anime Movie
+  - [x] Detail
+  - [x] Episode List
+- [x] Batch
+  - [x] Detail
+  - [x] Download Link
+- [x] Detail Episode
+  - [x] Pagination Per Episode
+  - [x] Streaming Link
+  - [x] Download Episode & Batch Link
+- [x] Season
+  - [x] Anime By Season With Pagination
+- [x] Studio
+  - [x] Anime By Studio With Pagination
+- [x] Producer
+  - [x] Anime By Producer With Pagination
+- [x] Search
+- [ ] Refactor Code Anime & Batch Detail Functions (If it is possible)
+- [ ] Handle If host site is error/down
+
+### Usage
+
 1. Clone this repository
-    ```bash
-    git clone https://github.com/febryardiansyah/manga-api.git
-    ```
-2. Install dependecies (`yarn` or `npm install`)
-3. Start the development environment (*if you haven't installed nodemon globally, you can do `npm i nodemon --save`)
-    ```bash
-    npm run dev or npm run start
-    ```
-4. visit http://localhost:3000/api
 
-# Documentation
-__API__ __PATH__ = https://mangamint.kaedenoki.net/api/
-</br>__ApI__ Version = `v2.0`
+```bash
+mkdir -p ~/Documents/git && git clone --depth=1 https://github.com/Hanivan/restAPI-Samehadaku.git ~/Documents/git/restAPI-Samehadaku && cd ~/Documents/git/restAPI-Samehadaku
+```
 
-## All Manga
-Get Latest Manga Update
-```
-/manga/page/[pagenumber]
-```
-example : https://mangamint.kaedenoki.net/api/manga/page/1
+2. Install packages (use `yarn` or `npm`)
 
-## Popular Manga
-Get Popular Manga
+```bash
+yarn install
 ```
-/manga/popular/[pageNumber]
-```
-example : https://mangamint.kaedenoki.net/api/manga/popular/1
 
-## Detail Manga
-```
-/manga/detail/[endpoint]
-```
-example : https://mangamint.kaedenoki.net/api/manga/detail/after-transformation-mine-and-her-wild-fantasy/
+3. Start server
 
-## Search Manga by Name
+```bash
+yarn start
 ```
-/search/[query]
-```
-example : https://mangamint.kaedenoki.net/api/search/komi%20san
 
-## Genre List
-```
-/genres
-```
-example : https://mangamint.kaedenoki.net/api/genres
+or
 
-## Genre Detail
 ```
-/genres/[endpoint]/[pagenumber]
+yarn dev (for development)
 ```
-example : https://mangamint.kaedenoki.net/api/genres/action/1
 
-## Recommended Manga
-```
-/recommended
-```
-example : https://mangamint.kaedenoki.net/api/recommended
+### API Documentation
 
-## Manhua List (Chinese Comic)
-```
-/manhua/[pageNumber]
-```
-example : https://mangamint.kaedenoki.net/api/manhua/1
+**API Path**: [https://samehadaku-api.herokuapp.com/api](https://samehadaku-api.herokuapp.com/api)<br>
+**API Version**: v1
 
-## Manhwa List (Korean Comic)
-```
-/manhwa/[pageNumber]
-```
-example : https://mangamint.kaedenoki.net/api/manhua/1
+| Endpoint                     | Params        | Description                          |
+| ---------------------------- | ------------- | ------------------------------------ |
+| /home                        | -             | Homepage (Current Season)            |
+| /anime                       | -             | List All Anime                       |
+| /anime/page/${page}          | pageNumber    | Anime Pagination                     |
+| /anime/${id}                 | id            | Detail Anime                         |
+| /ongoing                     | -             | List All Ongoing Anime               |
+| /ongoing/page/${page}        | pageNumber    | Ongoing Pagination                   |
+| /movie                       | -             | List All Anime Movie                 |
+| /movie/page/${page}          | pageNumber    | Anime Movie Pagination               |
+| /genres                      | -             | List All Genre                       |
+| /genres/${id}                | id            | Show Anime by Genre                  |
+| /genres/${id}/page/${page}   | id,pageNumber | ~~ Anime by Genre With Pagination    |
+| /batch                       | -             | List All Anime Batch                 |
+| /batch/page/${page}          | pageNumber    | Batch Pagination                     |
+| /batch/${id}                 | id            | Detail Anime Batch                   |
+| /eps/${id}                   | id            | ~~ Anime Episode                     |
+| /schedule                    | -             | Schedule Anime                       |
+| /studio/${id}                | id            | Show Anime by Studio                 |
+| /studio/${id}/page/${page}   | id,pageNumber | ~~ Anime by Studio With Pagination   |
+| /producer/${id}              | id            | Show Anime by Producer               |
+| /producer/${id}/page/${page} | id,pageNumber | ~~ Anime by Producer With Pagination |
+| /season/${id}                | id            | ~~ Anime by Season                   |
+| /season/${id}/page/${page}   | id,pageNumber | ~~ Anime by Season With Pagination   |
+| /search/${query}             | query         | Search Anime                         |
 
-## Chapter
-```
-/chapter/[chapterEndpoint]
-```
-example :https://mangamint.kaedenoki.net/api/chapter/after-transformation-mine-and-her-wild-fantasy-chapter-70-bahasa-indonesia/
+## Contributing
 
-## Showcase
-App Showcase that use this API (you can add your app by edit this readme)
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-- [MangaMint](https://github.com/febryardiansyah/manga_mint) Flutter Manga Reader Application by [Febry ardiansyah](https://github.com/febryardiansyah)
+## Development Details
+
+**Start Work**: Sunday, 16 January 2022; 16:-- WIB<br>
+**Finished Work**: Thursday, 27 January 2022; 15:-- WIB
+
+**Absence**: Monday, 24 January 2022<br>
+**Reason**: Learn GoLang
+
+Thank you [ Kaede-No-Ki/otakudesu-rest-api](https://github.com/Kaede-No-Ki/otakudesu-rest-api) for the inspiration to make this app
+
+Tools I used for making this application:
+
+- node-fetch & cheerio (Web Scrapper). [Tutorial](https://www.youtube.com/watch?v=z6jwIkkc7ro)
+- express
+- mathjs
+- dotenv
+- cors
+- [Zippy-DL](https://github.com/anasrar/Zippy-DL) (For Bypass Stream Link With Some Modification)
