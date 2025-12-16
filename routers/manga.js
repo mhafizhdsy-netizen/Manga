@@ -361,7 +361,7 @@ const getManhuaManhwa = async (req, res, type) => {
   let pagenumber = req.params.pagenumber;
   let path =
     pagenumber === "1"
-      ? `/manga/?orderby=&category_name=${type}&genre=&genre2=&status=`
+      ? `/pustaka/?orderby=&category_name=${type}&genre=&genre2=&status=`
       : `/manga/page/${pagenumber}/?orderby&category_name=${type}&genre&genre2&status`;
   const url = baseApi + path;
   try {
